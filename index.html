@@ -62,17 +62,6 @@
       }
     }
 
-    @keyframes fadeInScale {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(40px);
@@ -93,7 +82,7 @@
     }
 
     /* ========================================================== */
-    /* ===== NAVEGACIÓN MEJORADA ===== */
+    /* ===== NAVEGACIÓN ===== */
     /* ========================================================== */
     .navbar {
       position: fixed;
@@ -138,7 +127,6 @@
       color: #2563eb;
     }
 
-    /* --- Hamburguesa mejorada --- */
     .hamburger {
       display: none;
       flex-direction: column;
@@ -150,7 +138,6 @@
       z-index: 1001;
       border-radius: 12px;
       transition: background 0.2s ease;
-      position: relative;
     }
 
     .hamburger:hover {
@@ -180,7 +167,6 @@
       background: #2563eb;
     }
 
-    /* --- Overlay --- */
     .nav-overlay {
       display: none;
       position: fixed;
@@ -201,7 +187,6 @@
       opacity: 1;
     }
 
-    /* --- Menú lateral mejorado --- */
     .nav-links {
       position: fixed;
       top: 0;
@@ -227,7 +212,6 @@
       right: 0;
     }
 
-    /* Animación de entrada para cada enlace */
     .nav-links.open li {
       animation: slideInRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       opacity: 0;
@@ -284,7 +268,6 @@
       color: white !important;
     }
 
-    /* Decoración del menú lateral */
     .nav-links::before {
       content: '';
       position: absolute;
@@ -663,7 +646,7 @@
     }
 
     /* ========================================================== */
-    /* ===== SECCIÓN MARCAS / CLIENTES (CARRUSEL) ===== */
+    /* ===== SECCIÓN MARCAS / CLIENTES (CARRUSEL CON FOTOS) ===== */
     /* ========================================================== */
     .brands-section {
       background: white;
@@ -686,7 +669,6 @@
       font-size: clamp(0.85rem, 1vw, 1rem);
     }
 
-    /* --- Contenedor del carrusel --- */
     .carousel-wrapper {
       position: relative;
       overflow: hidden;
@@ -706,7 +688,6 @@
       animation-play-state: paused;
     }
 
-    /* --- Elementos del carrusel --- */
     .brand-item {
       display: flex;
       flex-direction: column;
@@ -728,11 +709,12 @@
       background: white;
     }
 
+    /* --- Estilo para la foto de perfil --- */
     .brand-item .brand-logo {
       width: clamp(48px, 6vw, 72px);
       height: clamp(48px, 6vw, 72px);
       border-radius: 50%;
-      background: white;
+      background: #eef2f6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -741,6 +723,24 @@
       color: white;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
       flex-shrink: 0;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .brand-item .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* Fallback si no hay imagen: letra inicial con color de fondo */
+    .brand-item .brand-logo .initial {
+      font-weight: 800;
+      font-size: clamp(1.2rem, 2vw, 2rem);
+      color: white;
+      text-transform: uppercase;
     }
 
     .brand-item .brand-name {
@@ -751,11 +751,7 @@
       line-height: 1.3;
     }
 
-    .brand-item .brand-emoji {
-      font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    }
-
-    /* Colores para cada marca */
+    /* Colores de respaldo para las iniciales */
     .brand-item:nth-child(1) .brand-logo { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
     .brand-item:nth-child(2) .brand-logo { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
     .brand-item:nth-child(3) .brand-logo { background: linear-gradient(135deg, #059669, #047857); }
@@ -767,13 +763,23 @@
     .brand-item:nth-child(9) .brand-logo { background: linear-gradient(135deg, #0d9488, #0f766e); }
     .brand-item:nth-child(10) .brand-logo { background: linear-gradient(135deg, #6b7280, #4b5563); }
 
-    /* Animación del carrusel */
+    /* Colores para el duplicado también */
+    .brand-item:nth-child(11) .brand-logo { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .brand-item:nth-child(12) .brand-logo { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
+    .brand-item:nth-child(13) .brand-logo { background: linear-gradient(135deg, #059669, #047857); }
+    .brand-item:nth-child(14) .brand-logo { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+    .brand-item:nth-child(15) .brand-logo { background: linear-gradient(135deg, #d97706, #b45309); }
+    .brand-item:nth-child(16) .brand-logo { background: linear-gradient(135deg, #0891b2, #0e7490); }
+    .brand-item:nth-child(17) .brand-logo { background: linear-gradient(135deg, #4f46e5, #4338ca); }
+    .brand-item:nth-child(18) .brand-logo { background: linear-gradient(135deg, #db2777, #be185d); }
+    .brand-item:nth-child(19) .brand-logo { background: linear-gradient(135deg, #0d9488, #0f766e); }
+    .brand-item:nth-child(20) .brand-logo { background: linear-gradient(135deg, #6b7280, #4b5563); }
+
     @keyframes scrollBrands {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
 
-    /* Pausar al pasar el mouse */
     .carousel-wrapper:hover .carousel-track {
       animation-play-state: paused;
     }
@@ -876,13 +882,11 @@
     /* ===== RESPONSIVE ===== */
     /* ========================================================== */
 
-    /* --- Tablets (max-width: 1024px) --- */
     @media (max-width: 1024px) {
       .hero .container { gap: 2rem; }
       .hero-text h1 { font-size: clamp(2.2rem, 4.5vw, 3rem); }
     }
 
-    /* --- Móviles grandes y tablets (max-width: 820px) --- */
     @media (max-width: 820px) {
       .hero .container {
         grid-template-columns: 1fr;
@@ -911,16 +915,12 @@
       }
 
       .section { padding: clamp(2rem, 4vw, 3.5rem) 0; }
-
-      /* Ajuste del carrusel en tablet */
       .brand-item { min-width: clamp(90px, 15vw, 120px); }
     }
 
-    /* --- Móviles (max-width: 640px) --- */
     @media (max-width: 640px) {
       .hamburger { display: flex; }
 
-      /* Menú lateral: más ancho en móvil */
       .nav-links {
         width: 80%;
         max-width: 300px;
@@ -928,10 +928,7 @@
         gap: 1.5rem;
       }
 
-      .nav-links a {
-        font-size: 1.1rem;
-      }
-
+      .nav-links a { font-size: 1.1rem; }
       .nav-cta {
         padding: 0.6rem 1.8rem !important;
         width: 100%;
@@ -944,7 +941,6 @@
         right: 1.2rem;
       }
 
-      /* Hero */
       .hero {
         padding: 5rem 0 2rem;
         min-height: auto;
@@ -970,7 +966,6 @@
 
       .hero-image img { max-width: clamp(140px, 50vw, 220px); }
 
-      /* Características: 2 columnas */
       .features-grid {
         grid-template-columns: 1fr 1fr;
         gap: 0.8rem;
@@ -993,7 +988,6 @@
       .feature-card h3 { font-size: clamp(0.8rem, 2.5vw, 0.95rem); }
       .feature-card p { font-size: clamp(0.7rem, 2vw, 0.8rem); }
 
-      /* Pasos: 1 columna horizontal */
       .steps-grid {
         grid-template-columns: 1fr;
         gap: 0.8rem;
@@ -1019,13 +1013,11 @@
       .step-card h3 { font-size: clamp(0.85rem, 2.5vw, 0.95rem); margin-bottom: 0.1rem; }
       .step-card p { font-size: clamp(0.75rem, 2vw, 0.85rem); }
 
-      /* About */
       .about-text h2 { font-size: clamp(1.4rem, 5vw, 1.8rem); }
       .about-text p { font-size: clamp(0.85rem, 2.5vw, 0.95rem); }
       .about-list li { font-size: clamp(0.8rem, 2.2vw, 0.9rem); }
       .about-image img { max-width: clamp(160px, 50vw, 240px); }
 
-      /* CTA */
       .cta-section {
         padding: 1.8rem 1rem;
       }
@@ -1036,7 +1028,6 @@
         max-width: 320px;
       }
 
-      /* --- Carrusel en móvil --- */
       .brands-section {
         padding: 1.5rem 0.8rem;
       }
@@ -1050,15 +1041,14 @@
       .brand-item .brand-logo {
         width: clamp(40px, 12vw, 56px);
         height: clamp(40px, 12vw, 56px);
+      }
+
+      .brand-item .brand-logo .initial {
         font-size: clamp(1rem, 3vw, 1.5rem);
       }
 
       .brand-item .brand-name {
         font-size: clamp(0.6rem, 2vw, 0.75rem);
-      }
-
-      .brand-item .brand-emoji {
-        font-size: clamp(1.2rem, 4vw, 1.8rem);
       }
 
       .carousel-track {
@@ -1068,7 +1058,6 @@
       .footer-links { gap: 0.8rem; }
     }
 
-    /* --- Móviles muy pequeños (max-width: 400px) --- */
     @media (max-width: 400px) {
       .container { padding: 0 0.8rem; }
       .features-grid { grid-template-columns: 1fr; gap: 0.6rem; }
@@ -1092,10 +1081,11 @@
       .brand-item .brand-logo {
         width: clamp(32px, 10vw, 44px);
         height: clamp(32px, 10vw, 44px);
+      }
+      .brand-item .brand-logo .initial {
         font-size: clamp(0.8rem, 2.5vw, 1.2rem);
       }
       .brand-item .brand-name { font-size: clamp(0.5rem, 2vw, 0.65rem); }
-      .brand-item .brand-emoji { font-size: clamp(1rem, 3.5vw, 1.5rem); }
       .carousel-track { gap: clamp(0.5rem, 2vw, 0.8rem); }
     }
   </style>
@@ -1105,7 +1095,7 @@
   <!-- ===== OVERLAY PARA MENÚ MÓVIL ===== -->
   <div class="nav-overlay" id="navOverlay"></div>
 
-  <!-- ===== NAVBAR MEJORADA ===== -->
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">
       <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/></svg>
@@ -1285,7 +1275,7 @@
   </section>
 
   <!-- ========================================================== -->
-  <!-- ===== SECCIÓN DE DESCARGA + CARRUSEL DE MARCAS ===== -->
+  <!-- ===== SECCIÓN DE DESCARGA + CARRUSEL CON FOTOS ===== -->
   <!-- ========================================================== -->
   <section class="section" id="download">
     <div class="container">
@@ -1312,7 +1302,7 @@
         </p>
       </div>
 
-      <!-- Carrusel de marcas / negocios que usan la app -->
+      <!-- Carrusel de marcas con fotos -->
       <div class="brands-section animate-on-scroll" style="margin-top: 2rem;">
         <div class="section-header">
           <h2>Confían en IPV · Mi Negocio</h2>
@@ -1322,124 +1312,187 @@
         <div class="carousel-wrapper">
           <div class="carousel-track">
 
-            <!-- Marca 1 -->
+            <!-- ========================================== -->
+            <!-- MARCA 1 - Mercado Libre -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">M</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/mercadolibre/100/100" alt="Mercado Libre" loading="lazy" />
+              </div>
               <span class="brand-name">Mercado Libre</span>
             </div>
 
-            <!-- Marca 2 -->
+            <!-- ========================================== -->
+            <!-- MARCA 2 - Ahorra Más -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">A</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/ahorramas/100/100" alt="Ahorra Más" loading="lazy" />
+              </div>
               <span class="brand-name">Ahorra Más</span>
             </div>
 
-            <!-- Marca 3 -->
+            <!-- ========================================== -->
+            <!-- MARCA 3 - Café Central -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">C</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/cafecentral/100/100" alt="Café Central" loading="lazy" />
+              </div>
               <span class="brand-name">Café Central</span>
             </div>
 
-            <!-- Marca 4 -->
+            <!-- ========================================== -->
+            <!-- MARCA 4 - Ferremax -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">F</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/ferremax/100/100" alt="Ferremax" loading="lazy" />
+              </div>
               <span class="brand-name">Ferremax</span>
             </div>
 
-            <!-- Marca 5 -->
+            <!-- ========================================== -->
+            <!-- MARCA 5 - Óptica Visión -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">O</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/opticavision/100/100" alt="Óptica Visión" loading="lazy" />
+              </div>
               <span class="brand-name">Óptica Visión</span>
             </div>
 
-            <!-- Marca 6 -->
+            <!-- ========================================== -->
+            <!-- MARCA 6 - Distribuidora D -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">D</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/distribuidorad/100/100" alt="Distribuidora D" loading="lazy" />
+              </div>
               <span class="brand-name">Distribuidora D</span>
             </div>
 
-            <!-- Marca 7 -->
+            <!-- ========================================== -->
+            <!-- MARCA 7 - Pizzería Roma -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">P</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/pizzeriaroma/100/100" alt="Pizzería Roma" loading="lazy" />
+              </div>
               <span class="brand-name">Pizzería Roma</span>
             </div>
 
-            <!-- Marca 8 -->
+            <!-- ========================================== -->
+            <!-- MARCA 8 - Tienda Tuya -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">T</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/tiendatuya/100/100" alt="Tienda Tuya" loading="lazy" />
+              </div>
               <span class="brand-name">Tienda Tuya</span>
             </div>
 
-            <!-- Marca 9 -->
+            <!-- ========================================== -->
+            <!-- MARCA 9 - Electro Center -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">E</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/electrocenter/100/100" alt="Electro Center" loading="lazy" />
+              </div>
               <span class="brand-name">Electro Center</span>
             </div>
 
-            <!-- Marca 10 -->
+            <!-- ========================================== -->
+            <!-- MARCA 10 - Ropa Linda -->
+            <!-- ========================================== -->
             <div class="brand-item">
-              <div class="brand-logo">R</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/ropalinda/100/100" alt="Ropa Linda" loading="lazy" />
+              </div>
               <span class="brand-name">Ropa Linda</span>
             </div>
 
-            <!-- DUPLICADO para efecto infinito -->
-            <!-- Marca 1 (duplicado) -->
+            <!-- ========================================== -->
+            <!-- DUPLICADOS para efecto infinito -->
+            <!-- ========================================== -->
+
+            <!-- DUPLICADO 1 -->
             <div class="brand-item">
-              <div class="brand-logo">M</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/mercadolibre/100/100" alt="Mercado Libre" loading="lazy" />
+              </div>
               <span class="brand-name">Mercado Libre</span>
             </div>
 
-            <!-- Marca 2 (duplicado) -->
+            <!-- DUPLICADO 2 -->
             <div class="brand-item">
-              <div class="brand-logo">A</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/ahorramas/100/100" alt="Ahorra Más" loading="lazy" />
+              </div>
               <span class="brand-name">Ahorra Más</span>
             </div>
 
-            <!-- Marca 3 (duplicado) -->
+            <!-- DUPLICADO 3 -->
             <div class="brand-item">
-              <div class="brand-logo">C</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/cafecentral/100/100" alt="Café Central" loading="lazy" />
+              </div>
               <span class="brand-name">Café Central</span>
             </div>
 
-            <!-- Marca 4 (duplicado) -->
+            <!-- DUPLICADO 4 -->
             <div class="brand-item">
-              <div class="brand-logo">F</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/ferremax/100/100" alt="Ferremax" loading="lazy" />
+              </div>
               <span class="brand-name">Ferremax</span>
             </div>
 
-            <!-- Marca 5 (duplicado) -->
+            <!-- DUPLICADO 5 -->
             <div class="brand-item">
-              <div class="brand-logo">O</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/opticavision/100/100" alt="Óptica Visión" loading="lazy" />
+              </div>
               <span class="brand-name">Óptica Visión</span>
             </div>
 
-            <!-- Marca 6 (duplicado) -->
+            <!-- DUPLICADO 6 -->
             <div class="brand-item">
-              <div class="brand-logo">D</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/distribuidorad/100/100" alt="Distribuidora D" loading="lazy" />
+              </div>
               <span class="brand-name">Distribuidora D</span>
             </div>
 
-            <!-- Marca 7 (duplicado) -->
+            <!-- DUPLICADO 7 -->
             <div class="brand-item">
-              <div class="brand-logo">P</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/pizzeriaroma/100/100" alt="Pizzería Roma" loading="lazy" />
+              </div>
               <span class="brand-name">Pizzería Roma</span>
             </div>
 
-            <!-- Marca 8 (duplicado) -->
+            <!-- DUPLICADO 8 -->
             <div class="brand-item">
-              <div class="brand-logo">T</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/tiendatuya/100/100" alt="Tienda Tuya" loading="lazy" />
+              </div>
               <span class="brand-name">Tienda Tuya</span>
             </div>
 
-            <!-- Marca 9 (duplicado) -->
+            <!-- DUPLICADO 9 -->
             <div class="brand-item">
-              <div class="brand-logo">E</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/electrocenter/100/100" alt="Electro Center" loading="lazy" />
+              </div>
               <span class="brand-name">Electro Center</span>
             </div>
 
-            <!-- Marca 10 (duplicado) -->
+            <!-- DUPLICADO 10 -->
             <div class="brand-item">
-              <div class="brand-logo">R</div>
+              <div class="brand-logo">
+                <img src="https://picsum.photos/seed/ropalinda/100/100" alt="Ropa Linda" loading="lazy" />
+              </div>
               <span class="brand-name">Ropa Linda</span>
             </div>
 
@@ -1492,16 +1545,13 @@
         document.body.style.overflow = '';
       }
 
-      // Eventos del menú
       hamburger.addEventListener('click', toggleMenu);
       overlay.addEventListener('click', closeMenu);
 
-      // Cerrar menú al hacer clic en un enlace
       navLinkItems.forEach(link => {
         link.addEventListener('click', closeMenu);
       });
 
-      // Cerrar menú con la tecla ESC
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navLinks.classList.contains('open')) {
           closeMenu();
