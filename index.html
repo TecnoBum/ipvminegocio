@@ -116,10 +116,11 @@
       z-index: 1001;
     }
 
-    .nav-logo svg {
-      width: clamp(20px, 2.5vw, 28px);
-      height: clamp(20px, 2.5vw, 28px);
-      fill: #2563eb;
+    .nav-logo img {
+      width: clamp(28px, 3vw, 36px);
+      height: clamp(28px, 3vw, 36px);
+      border-radius: 50%;
+      object-fit: cover;
       flex-shrink: 0;
     }
 
@@ -646,8 +647,169 @@
     }
 
     /* ========================================================== */
-    /* ===== SECCIÓN MARCAS / CLIENTES (CARRUSEL CON FOTOS) ===== */
+    /* ===== PLANES / OFERTAS ===== */
     /* ========================================================== */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: clamp(1.5rem, 2.5vw, 2.5rem);
+      margin-top: 1.5rem;
+    }
+
+    .plan-card {
+      background: white;
+      border-radius: clamp(24px, 2.5vw, 36px);
+      padding: clamp(2rem, 3vw, 3rem) clamp(1.2rem, 2vw, 2rem);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.07);
+    }
+
+    .plan-card .plan-icon {
+      width: clamp(56px, 6vw, 72px);
+      height: clamp(56px, 6vw, 72px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.2rem;
+      flex-shrink: 0;
+    }
+
+    .plan-card .plan-icon svg {
+      width: clamp(28px, 3vw, 36px);
+      height: clamp(28px, 3vw, 36px);
+      fill: white;
+    }
+
+    .plan-card .plan-icon.owner {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    }
+
+    .plan-card .plan-icon.seller {
+      background: linear-gradient(135deg, #059669, #047857);
+    }
+
+    .plan-card h3 {
+      font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .plan-card .plan-price {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 800;
+      color: #0b1e33;
+    }
+
+    .plan-card .plan-price span {
+      font-size: 0.6em;
+      font-weight: 500;
+      color: #3a5670;
+    }
+
+    .plan-card .plan-features {
+      list-style: none;
+      text-align: left;
+      width: 100%;
+      padding: 0 0.5rem;
+      margin: 0.5rem 0;
+    }
+
+    .plan-card .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.3rem 0;
+      font-size: clamp(0.85rem, 1vw, 0.95rem);
+      color: #1f4462;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .plan-card .plan-features li:last-child {
+      border-bottom: none;
+    }
+
+    .plan-card .plan-features li svg {
+      width: clamp(16px, 1.4vw, 20px);
+      height: clamp(16px, 1.4vw, 20px);
+      fill: #2563eb;
+      flex-shrink: 0;
+    }
+
+    .plan-card .plan-features li .check-green {
+      fill: #059669;
+    }
+
+    .plan-card .btn-plan {
+      margin-top: 0.5rem;
+      width: 100%;
+      max-width: 260px;
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: clamp(0.9rem, 1.1vw, 1rem);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: #1a2e44;
+      color: white;
+      box-shadow: 0 8px 20px -6px rgba(20, 50, 80, 0.25);
+    }
+
+    .plan-card .btn-plan:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px -8px rgba(20, 50, 80, 0.35);
+      background: #0f2238;
+    }
+
+    .plan-card .btn-plan.owner-btn {
+      background: #2563eb;
+    }
+    .plan-card .btn-plan.owner-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .plan-card .btn-plan.seller-btn {
+      background: #059669;
+    }
+    .plan-card .btn-plan.seller-btn:hover {
+      background: #047857;
+    }
+
+    .plan-card .plan-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
+      font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+      font-weight: 600;
+      padding: 0.15rem 0.8rem;
+      border-radius: 40px;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+
+    .plan-card .plan-badge.popular {
+      background: rgba(5, 150, 105, 0.1);
+      color: #059669;
+      border-color: rgba(5, 150, 105, 0.2);
+    }
+
+    /* ===== SECCIÓN MARCAS / CLIENTES (CARRUSEL CON FOTOS) ===== */
     .brands-section {
       background: white;
       border-radius: clamp(24px, 3vw, 48px);
@@ -709,7 +871,6 @@
       background: white;
     }
 
-    /* --- Estilo para la foto de perfil --- */
     .brand-item .brand-logo {
       width: clamp(48px, 6vw, 72px);
       height: clamp(48px, 6vw, 72px);
@@ -735,7 +896,6 @@
       display: block;
     }
 
-    /* Fallback si no hay imagen: letra inicial con color de fondo */
     .brand-item .brand-logo .initial {
       font-weight: 800;
       font-size: clamp(1.2rem, 2vw, 2rem);
@@ -751,7 +911,6 @@
       line-height: 1.3;
     }
 
-    /* Colores de respaldo para las iniciales */
     .brand-item:nth-child(1) .brand-logo { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
     .brand-item:nth-child(2) .brand-logo { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
     .brand-item:nth-child(3) .brand-logo { background: linear-gradient(135deg, #059669, #047857); }
@@ -762,8 +921,6 @@
     .brand-item:nth-child(8) .brand-logo { background: linear-gradient(135deg, #db2777, #be185d); }
     .brand-item:nth-child(9) .brand-logo { background: linear-gradient(135deg, #0d9488, #0f766e); }
     .brand-item:nth-child(10) .brand-logo { background: linear-gradient(135deg, #6b7280, #4b5563); }
-
-    /* Colores para el duplicado también */
     .brand-item:nth-child(11) .brand-logo { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
     .brand-item:nth-child(12) .brand-logo { background: linear-gradient(135deg, #7c3aed, #6d28d9); }
     .brand-item:nth-child(13) .brand-logo { background: linear-gradient(135deg, #059669, #047857); }
@@ -916,6 +1073,7 @@
 
       .section { padding: clamp(2rem, 4vw, 3.5rem) 0; }
       .brand-item { min-width: clamp(90px, 15vw, 120px); }
+      .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 1.5rem auto 0; }
     }
 
     @media (max-width: 640px) {
@@ -1056,6 +1214,10 @@
       }
 
       .footer-links { gap: 0.8rem; }
+
+      .plan-card .plan-features li {
+        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+      }
     }
 
     @media (max-width: 400px) {
@@ -1098,7 +1260,7 @@
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">
-      <svg viewBox="0 0 24 24"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h10v2H4v-2z"/></svg>
+      <img src="https://i.postimg.cc/xjX9BQwf/logo.jpg" alt="IPV Logo" />
       <span>IPV</span> · Mi Negocio
     </div>
 
@@ -1112,6 +1274,7 @@
       <li><a href="#features" class="nav-link">Características</a></li>
       <li><a href="#how-it-works" class="nav-link">Cómo funciona</a></li>
       <li><a href="#about" class="nav-link">Sobre la app</a></li>
+      <li><a href="#plans" class="nav-link">Planes</a></li>
       <li><a href="#download" class="nav-cta nav-link">Descargar</a></li>
     </ul>
   </nav>
@@ -1145,7 +1308,7 @@
       </div>
       <div class="hero-image">
         <img
-          src="https://images.icon-icons.com/1138/PNG/512/1486395307-17-store_80571.png"
+          src="https://i.postimg.cc/xjX9BQwf/logo.jpg"
           alt="IPV - Mi Negocio App"
           loading="lazy"
           decoding="async"
@@ -1264,12 +1427,76 @@
         </div>
         <div class="about-image animate-on-scroll">
           <img
-            src="https://images.icon-icons.com/1138/PNG/512/1486395307-17-store_80571.png"
+            src="https://i.postimg.cc/xjX9BQwf/logo.jpg"
             alt="Sobre IPV - Mi Negocio"
             loading="lazy"
             decoding="async"
           />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- ===== SECCIÓN DE PLANES / OFERTAS ===== -->
+  <!-- ========================================================== -->
+  <section class="section" id="plans">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Elige el plan ideal para ti</h2>
+        <p>Ofertas especiales para Dueños de Negocio y Vendedores</p>
+      </div>
+
+      <div class="plans-grid">
+
+        <!-- ===== PLAN DUEÑO DE NEGOCIO ===== -->
+        <div class="plan-card animate-on-scroll">
+          <div class="plan-icon owner">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <h3>Dueño de Negocio</h3>
+          <div class="plan-price">9,000 <span>CUP</span></div>
+          <span class="plan-badge popular">🔥 Más popular</span>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Control total del inventario</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Reportes de ventas avanzados</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestión y creación de usuarios dependientes</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Soporte prioritario 24/7</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Personalización de la app</li>
+          </ul>
+          <a href="https://wa.me/5359785623?text=Hola%2C%20quiero%20adquirir%20el%20plan%20DUE%C3%91O%20DE%20NEGOCIO%20de%20IPV%20-%20Mi%20Negocio" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-plan owner-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Adquirir Plan
+          </a>
+        </div>
+
+        <!-- ===== PLAN VENDEDOR ===== -->
+        <div class="plan-card animate-on-scroll">
+          <div class="plan-icon seller">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg>
+          </div>
+          <h3>Vendedor</h3>
+          <div class="plan-price">5,000 <span>CUP</span></div>
+          <span class="plan-badge">⭐ Ideal para empezar</span>
+          <ul class="plan-features">
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Registro de ventas rápido</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Historial de clientes</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestión básica de inventario</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Reportes diarios y semanales</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Soporte por correo</li>
+          </ul>
+          <a href="https://wa.me/5359785623?text=Hola%2C%20quiero%20adquirir%20el%20plan%20VENDEDOR%20de%20IPV%20-%20Mi%20Negocio" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-plan seller-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Adquirir Plan
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1312,9 +1539,7 @@
         <div class="carousel-wrapper">
           <div class="carousel-track">
 
-            <!-- ========================================== -->
-            <!-- MARCA 1 - Mercado Libre -->
-            <!-- ========================================== -->
+            <!-- MARCA 1 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/mercadolibre/100/100" alt="Mercado Libre" loading="lazy" />
@@ -1322,9 +1547,7 @@
               <span class="brand-name">Mercado Libre</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 2 - Ahorra Más -->
-            <!-- ========================================== -->
+            <!-- MARCA 2 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/ahorramas/100/100" alt="Ahorra Más" loading="lazy" />
@@ -1332,9 +1555,7 @@
               <span class="brand-name">Ahorra Más</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 3 - Café Central -->
-            <!-- ========================================== -->
+            <!-- MARCA 3 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/cafecentral/100/100" alt="Café Central" loading="lazy" />
@@ -1342,9 +1563,7 @@
               <span class="brand-name">Café Central</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 4 - Ferremax -->
-            <!-- ========================================== -->
+            <!-- MARCA 4 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/ferremax/100/100" alt="Ferremax" loading="lazy" />
@@ -1352,9 +1571,7 @@
               <span class="brand-name">Ferremax</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 5 - Óptica Visión -->
-            <!-- ========================================== -->
+            <!-- MARCA 5 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/opticavision/100/100" alt="Óptica Visión" loading="lazy" />
@@ -1362,9 +1579,7 @@
               <span class="brand-name">Óptica Visión</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 6 - Distribuidora D -->
-            <!-- ========================================== -->
+            <!-- MARCA 6 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/distribuidorad/100/100" alt="Distribuidora D" loading="lazy" />
@@ -1372,9 +1587,7 @@
               <span class="brand-name">Distribuidora D</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 7 - Pizzería Roma -->
-            <!-- ========================================== -->
+            <!-- MARCA 7 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/pizzeriaroma/100/100" alt="Pizzería Roma" loading="lazy" />
@@ -1382,9 +1595,7 @@
               <span class="brand-name">Pizzería Roma</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 8 - Tienda Tuya -->
-            <!-- ========================================== -->
+            <!-- MARCA 8 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/tiendatuya/100/100" alt="Tienda Tuya" loading="lazy" />
@@ -1392,9 +1603,7 @@
               <span class="brand-name">Tienda Tuya</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 9 - Electro Center -->
-            <!-- ========================================== -->
+            <!-- MARCA 9 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/electrocenter/100/100" alt="Electro Center" loading="lazy" />
@@ -1402,9 +1611,7 @@
               <span class="brand-name">Electro Center</span>
             </div>
 
-            <!-- ========================================== -->
-            <!-- MARCA 10 - Ropa Linda -->
-            <!-- ========================================== -->
+            <!-- MARCA 10 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/ropalinda/100/100" alt="Ropa Linda" loading="lazy" />
@@ -1412,83 +1619,61 @@
               <span class="brand-name">Ropa Linda</span>
             </div>
 
-            <!-- ========================================== -->
             <!-- DUPLICADOS para efecto infinito -->
-            <!-- ========================================== -->
-
-            <!-- DUPLICADO 1 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/mercadolibre/100/100" alt="Mercado Libre" loading="lazy" />
               </div>
               <span class="brand-name">Mercado Libre</span>
             </div>
-
-            <!-- DUPLICADO 2 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/ahorramas/100/100" alt="Ahorra Más" loading="lazy" />
               </div>
               <span class="brand-name">Ahorra Más</span>
             </div>
-
-            <!-- DUPLICADO 3 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/cafecentral/100/100" alt="Café Central" loading="lazy" />
               </div>
               <span class="brand-name">Café Central</span>
             </div>
-
-            <!-- DUPLICADO 4 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/ferremax/100/100" alt="Ferremax" loading="lazy" />
               </div>
               <span class="brand-name">Ferremax</span>
             </div>
-
-            <!-- DUPLICADO 5 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/opticavision/100/100" alt="Óptica Visión" loading="lazy" />
               </div>
               <span class="brand-name">Óptica Visión</span>
             </div>
-
-            <!-- DUPLICADO 6 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/distribuidorad/100/100" alt="Distribuidora D" loading="lazy" />
               </div>
               <span class="brand-name">Distribuidora D</span>
             </div>
-
-            <!-- DUPLICADO 7 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/pizzeriaroma/100/100" alt="Pizzería Roma" loading="lazy" />
               </div>
               <span class="brand-name">Pizzería Roma</span>
             </div>
-
-            <!-- DUPLICADO 8 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/tiendatuya/100/100" alt="Tienda Tuya" loading="lazy" />
               </div>
               <span class="brand-name">Tienda Tuya</span>
             </div>
-
-            <!-- DUPLICADO 9 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/electrocenter/100/100" alt="Electro Center" loading="lazy" />
               </div>
               <span class="brand-name">Electro Center</span>
             </div>
-
-            <!-- DUPLICADO 10 -->
             <div class="brand-item">
               <div class="brand-logo">
                 <img src="https://picsum.photos/seed/ropalinda/100/100" alt="Ropa Linda" loading="lazy" />
@@ -1509,6 +1694,7 @@
         <a href="#home">Inicio</a>
         <a href="#features">Características</a>
         <a href="#about">Sobre la app</a>
+        <a href="#plans">Planes</a>
         <a href="#download">Descargar</a>
       </div>
       <p>© 2026 IPV - Mi Negocio. Todos los derechos reservados.</p>
