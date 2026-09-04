@@ -590,6 +590,61 @@
       font-size: clamp(0.8rem, 1vw, 0.9rem);
     }
 
+    /* ========================================================== */
+    /* ===== SECCIÓN VIDEOS TUTORIALES ===== */
+    /* ========================================================== */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: clamp(1.5rem, 2.5vw, 2.5rem);
+      margin-top: 1.5rem;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: clamp(20px, 2vw, 28px);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-card .video-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #1a2e44;
+      overflow: hidden;
+    }
+
+    .video-card .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .video-card .video-info {
+      padding: clamp(1rem, 1.5vw, 1.5rem);
+    }
+
+    .video-card .video-info h3 {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #0b1e33;
+    }
+
+    .video-card .video-info p {
+      color: #3a5670;
+      font-size: clamp(0.85rem, 0.9vw, 0.95rem);
+      line-height: 1.5;
+    }
+
     /* ===== SOBRE LA APP ===== */
     .about-grid {
       display: grid;
@@ -728,12 +783,13 @@
 
     .plan-card .plan-features li {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.6rem;
       padding: 0.3rem 0;
-      font-size: clamp(0.85rem, 1vw, 0.95rem);
+      font-size: clamp(0.8rem, 1vw, 0.9rem);
       color: #1f4462;
       border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+      line-height: 1.4;
     }
 
     .plan-card .plan-features li:last-child {
@@ -741,10 +797,11 @@
     }
 
     .plan-card .plan-features li svg {
-      width: clamp(16px, 1.4vw, 20px);
-      height: clamp(16px, 1.4vw, 20px);
+      width: clamp(16px, 1.4vw, 18px);
+      height: clamp(16px, 1.4vw, 18px);
       fill: #2563eb;
       flex-shrink: 0;
+      margin-top: 0.15rem;
     }
 
     .plan-card .plan-features li .check-green {
@@ -1035,6 +1092,13 @@
       color: #2563eb;
     }
 
+    .footer .developer-credit {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      color: #1f4462;
+      letter-spacing: 0.3px;
+    }
+
     /* ========================================================== */
     /* ===== RESPONSIVE ===== */
     /* ========================================================== */
@@ -1216,7 +1280,14 @@
       .footer-links { gap: 0.8rem; }
 
       .plan-card .plan-features li {
-        font-size: clamp(0.8rem, 2.2vw, 0.9rem);
+        font-size: clamp(0.75rem, 2.2vw, 0.85rem);
+      }
+
+      .videos-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
@@ -1273,6 +1344,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#features" class="nav-link">Características</a></li>
       <li><a href="#how-it-works" class="nav-link">Cómo funciona</a></li>
+      <li><a href="#tutorials" class="nav-link">Tutoriales</a></li>
       <li><a href="#about" class="nav-link">Sobre la app</a></li>
       <li><a href="#plans" class="nav-link">Planes</a></li>
       <li><a href="#download" class="nav-cta nav-link">Descargar</a></li>
@@ -1375,17 +1447,61 @@
         <div class="step-card animate-on-scroll">
           <div class="step-number">2</div>
           <div>
-            <h3>Regístrate</h3>
-            <p>Crea tu cuenta en segundos con tu correo.</p>
+            <h3>Solicitar Plan</h3>
+            <p>Elige el plan que mejor se adapte a tu negocio.</p>
           </div>
         </div>
         <div class="step-card animate-on-scroll">
           <div class="step-number">3</div>
           <div>
-            <h3>Empieza a vender</h3>
+            <h3>Empieza a Usar la Aplicación</h3>
             <p>Ingresa productos y comienza a facturar.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- ===== SECCIÓN VIDEOS TUTORIALES ===== -->
+  <!-- ========================================================== -->
+  <section class="section" id="tutorials">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Videotutoriales</h2>
+        <p>Aprende a usar IPV - Mi Negocio con nuestros videos guía</p>
+      </div>
+
+      <div class="videos-grid">
+
+        <!-- Video 1 -->
+        <div class="video-card animate-on-scroll">
+          <div class="video-wrapper">
+            <video controls autoplay muted playsinline>
+              <source src="https://www.image2url.com/r2/default/videos/1788527257025-21960e7c-33d4-4b14-8fae-72619b20e66e.mp4" type="video/mp4">
+              Tu navegador no soporta la reproducción de videos.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3>Presentación de IPV</h3>
+            <p>Conoce las funcionalidades principales de la app en este video.</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-card animate-on-scroll">
+          <div class="video-wrapper">
+            <video controls autoplay muted playsinline>
+              <source src="https://www.image2url.com/r2/default/videos/1788527561128-f0fe7d99-7628-4a90-afd2-546fb42bc0ba.mp4" type="video/mp4">
+              Tu navegador no soporta la reproducción de videos.
+            </video>
+          </div>
+          <div class="video-info">
+            <h3>Gestión de inventario</h3>
+            <p>Aprende a administrar tu inventario de manera eficiente.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1402,7 +1518,7 @@
             Sin complicaciones, sin curvas de aprendizaje, solo lo que necesitas.
           </p>
           <p>
-            Desarrollada por un equipo con más de 10 años de experiencia en
+            Desarrollada por un equipo con más de 3 años de experiencia en
             soluciones para pymes, esta app ha sido probada y validada por
             cientos de usuarios.
           </p>
@@ -1460,7 +1576,11 @@
           <ul class="plan-features">
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Control total del inventario</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Reportes de ventas avanzados</li>
-            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestión y creación de usuarios dependientes</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestión y creación de usuarios y equipo de dependientes</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Gestión de información y estadísticas de dependientes</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Recepción de información de los dependientes</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Creación de Turnos de trabajo</li>
+            <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Acceso anticipado a nuevas actualizaciones</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Soporte prioritario 24/7</li>
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Personalización de la app</li>
           </ul>
@@ -1693,14 +1813,14 @@
       <div class="footer-links">
         <a href="#home">Inicio</a>
         <a href="#features">Características</a>
+        <a href="#how-it-works">Cómo funciona</a>
+        <a href="#tutorials">Tutoriales</a>
         <a href="#about">Sobre la app</a>
         <a href="#plans">Planes</a>
         <a href="#download">Descargar</a>
       </div>
       <p>© 2026 IPV - Mi Negocio. Todos los derechos reservados.</p>
-      <p style="margin-top: 0.2rem; opacity: 0.6; font-size: clamp(0.65rem, 0.8vw, 0.75rem);">
-        Equipo Versus
-      </p>
+      <p class="developer-credit">Desarrollado por VERSUS Technology</p>
     </div>
   </footer>
 
