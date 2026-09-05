@@ -1,4 +1,8 @@
-Admin/Admin
 Andres/Versus.01
 Johan/Astyk999
-Ana/Admin.Ana
+adminA7 / ClaveA7
+adminB3 / ClaveB3
+adminC9 / ClaveC9
+adminD2 / ClaveD2
+adminE8 / ClaveE8
+
