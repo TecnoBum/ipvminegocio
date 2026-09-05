@@ -1,4 +1,7 @@
-Vendedor/Vendedor
 Andres/Vendedor.Versus
 Johan/Vendedor.02
-Ana/Ana.01
+vendedorF4 / ClaveF4
+vendedorG1 / ClaveG1
+vendedorH6 / ClaveH6
+vendedorJ9 / ClaveJ9
+vendedorK5 / ClaveK5
