@@ -444,6 +444,16 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
     }
 
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe5c;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+    }
+
     .hero-image {
       display: flex;
       justify-content: center;
@@ -761,18 +771,6 @@
       letter-spacing: -0.02em;
     }
 
-    .plan-card .plan-price {
-      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
-      font-weight: 800;
-      color: #0b1e33;
-    }
-
-    .plan-card .plan-price span {
-      font-size: 0.6em;
-      font-weight: 500;
-      color: #3a5670;
-    }
-
     .plan-card .plan-features {
       list-style: none;
       text-align: left;
@@ -802,10 +800,6 @@
       fill: #2563eb;
       flex-shrink: 0;
       margin-top: 0.15rem;
-    }
-
-    .plan-card .plan-features li .check-green {
-      fill: #059669;
     }
 
     .plan-card .btn-plan {
@@ -864,6 +858,101 @@
       background: rgba(5, 150, 105, 0.1);
       color: #059669;
       border-color: rgba(5, 150, 105, 0.2);
+    }
+
+    /* ========================================================== */
+    /* ===== SECCIÓN OTROS SERVICIOS ===== */
+    /* ========================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      gap: clamp(1rem, 1.5vw, 1.8rem);
+      margin-top: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: clamp(1.5rem, 2vw, 2rem) clamp(1rem, 1.5vw, 1.5rem);
+      border-radius: clamp(18px, 2vw, 28px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .service-card .service-icon {
+      width: clamp(44px, 5vw, 56px);
+      height: clamp(44px, 5vw, 56px);
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.8rem;
+    }
+
+    .service-card .service-icon svg {
+      width: clamp(24px, 2.8vw, 30px);
+      height: clamp(24px, 2.8vw, 30px);
+      fill: #2563eb;
+    }
+
+    .service-card h4 {
+      font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-card p {
+      color: #3a5670;
+      font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+      line-height: 1.5;
+    }
+
+    /* ========================================================== */
+    /* ===== SECCIÓN DESCARGA ESCRITORIO ===== */
+    /* ========================================================== */
+    .desktop-download-section {
+      background: linear-gradient(135deg, #e8edf2, #dce5ed);
+      border-radius: clamp(24px, 3vw, 48px);
+      padding: clamp(2rem, 4vw, 4rem) clamp(1.2rem, 3vw, 3rem);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .desktop-download-section .btn-desktop {
+      background: #2d3748;
+      color: white;
+      box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.2);
+    }
+
+    .desktop-download-section .btn-desktop:hover {
+      background: #1a202c;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.3);
+    }
+
+    .desktop-download-section .btn-desktop svg {
+      fill: currentColor;
+    }
+
+    .desktop-download-section .cta-note {
+      margin-top: 1.2rem;
+      padding: 0.8rem 1.2rem;
+      background: rgba(0, 0, 0, 0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      font-size: clamp(0.8rem, 0.9vw, 0.85rem);
+      color: #1f4462;
+    }
+
+    .desktop-download-section .cta-note strong {
+      color: #0b1e33;
     }
 
     /* ===== SECCIÓN MARCAS / CLIENTES (CARRUSEL CON FOTOS) ===== */
@@ -1061,6 +1150,46 @@
       opacity: 0.6;
     }
 
+    .cta-note {
+      margin-top: 1rem;
+      padding: 0.8rem 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: clamp(0.8rem, 0.9vw, 0.85rem);
+      opacity: 0.9;
+    }
+
+    .cta-note strong {
+      color: #fff;
+    }
+
+    .cta-note .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: clamp(0.75rem, 0.8vw, 0.8rem);
+      margin-top: 0.4rem;
+      text-decoration: none;
+      color: white;
+      background: #25D366;
+      transition: all 0.3s ease;
+    }
+
+    .cta-note .btn-whatsapp:hover {
+      background: #1ebe5c;
+      transform: scale(1.03);
+    }
+
+    .cta-note .btn-whatsapp svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
     /* ===== FOOTER ===== */
     .footer {
       text-align: center;
@@ -1138,6 +1267,7 @@
       .section { padding: clamp(2rem, 4vw, 3.5rem) 0; }
       .brand-item { min-width: clamp(90px, 15vw, 120px); }
       .plans-grid { grid-template-columns: 1fr; max-width: 420px; margin: 1.5rem auto 0; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 640px) {
@@ -1289,6 +1419,17 @@
         margin-left: auto;
         margin-right: auto;
       }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .desktop-download-section {
+        padding: 1.8rem 1rem;
+      }
     }
 
     @media (max-width: 400px) {
@@ -1347,7 +1488,9 @@
       <li><a href="#tutorials" class="nav-link">Tutoriales</a></li>
       <li><a href="#about" class="nav-link">Sobre la app</a></li>
       <li><a href="#plans" class="nav-link">Planes</a></li>
-      <li><a href="#download" class="nav-cta nav-link">Descargar</a></li>
+      <li><a href="#services" class="nav-link">Servicios</a></li>
+      <li><a href="#download" class="nav-link">Descargar</a></li>
+      <li><a href="#download-desktop" class="nav-cta nav-link">Escritorio</a></li>
     </ul>
   </nav>
 
@@ -1571,7 +1714,6 @@
             <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
           </div>
           <h3>Dueño de Negocio</h3>
-          <div class="plan-price">9,000 <span>CUP</span></div>
           <span class="plan-badge popular">🔥 Más popular</span>
           <ul class="plan-features">
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Control total del inventario</li>
@@ -1599,7 +1741,6 @@
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg>
           </div>
           <h3>Vendedor</h3>
-          <div class="plan-price">5,000 <span>CUP</span></div>
           <span class="plan-badge">⭐ Ideal para empezar</span>
           <ul class="plan-features">
             <li><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Registro de ventas rápido</li>
@@ -1622,11 +1763,95 @@
   </section>
 
   <!-- ========================================================== -->
-  <!-- ===== SECCIÓN DE DESCARGA + CARRUSEL CON FOTOS ===== -->
+  <!-- ===== SECCIÓN OTROS SERVICIOS ===== -->
+  <!-- ========================================================== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <h2>Otros Servicios</h2>
+        <p>Soluciones integrales para potenciar tu negocio</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <h4>Asesoría a negocios</h4>
+          <p>Consultoría personalizada para optimizar la gestión y operación de tu empresa.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 12H6v-2h2v2zm10 0h-8v-2h8v2z"/></svg>
+          </div>
+          <h4>Asesoría tecnológica</h4>
+          <p>Implementación de soluciones tecnológicas a medida para tu negocio.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+          </div>
+          <h4>Asesoría económica</h4>
+          <p>Análisis financiero y estrategias para mejorar la rentabilidad de tu negocio.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm0 4c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"/></svg>
+          </div>
+          <h4>Técnicas de negocio</h4>
+          <p>Capacitación en metodologías y herramientas para la gestión empresarial.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+          </div>
+          <h4>Análisis de negocios</h4>
+          <p>Evaluación de procesos y datos para identificar oportunidades de mejora.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <h4>Estrategias</h4>
+          <p>Desarrollo de planes estratégicos para alcanzar tus objetivos comerciales.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg>
+          </div>
+          <h4>Marketing digital</h4>
+          <p>Estrategias de marketing online para aumentar la visibilidad y ventas.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <h4>Redes sociales</h4>
+          <p>Gestión y optimización de perfiles en redes sociales para tu marca.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+          </div>
+          <h4>Campañas de promoción y publicidad</h4>
+          <p>Creación y ejecución de campañas publicitarias efectivas.</p>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h8v2H6zm10 0h2v2h-2zm-6-4h8v2h-8z"/></svg>
+          </div>
+          <h4>Diseño y más</h4>
+          <p>Servicios de diseño gráfico, web y branding para fortalecer tu identidad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- ===== SECCIÓN DE DESCARGA MÓVIL ===== -->
   <!-- ========================================================== -->
   <section class="section" id="download">
     <div class="container">
-      <!-- Tarjeta de descarga -->
       <div class="cta-section animate-on-scroll">
         <div class="cta-badge">
           <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
@@ -1642,15 +1867,66 @@
           style="background: white; color: #0b1e33;"
         >
           <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-          Descargar ahora (31.33 MB)
+          Descargar ahora
         </a>
         <p class="cta-meta">
           Android 5.0+ · Archivo APK · Descarga segura
         </p>
-      </div>
 
-      <!-- Carrusel de marcas con fotos -->
-      <div class="brands-section animate-on-scroll" style="margin-top: 2rem;">
+        <div class="cta-note">
+          <p>
+            <strong>📱 Compatible con Android 5.0.0 o superior.</strong><br>
+            Si tu dispositivo tiene una versión inferior, contáctanos para ayudarte.
+          </p>
+          <a href="https://wa.me/5359785623?text=Hola%2C%20necesito%20ayuda%20con%20la%20compatibilidad%20de%20IPV%20-%20Mi%20Negocio" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             class="btn-whatsapp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Contactar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- ===== SECCIÓN DE DESCARGA ESCRITORIO ===== -->
+  <!-- ========================================================== -->
+  <section class="section" id="download-desktop">
+    <div class="container">
+      <div class="desktop-download-section animate-on-scroll">
+        <div style="display: flex; justify-content: center; margin-bottom: 0.8rem;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="#2563eb"><path d="M21 14H3v4h18v-4zM3 10h18v2H3v-2zM3 6h18v2H3V6z"/><path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H3V6h18v12z"/></svg>
+        </div>
+        <h2 style="font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; color: #0b1e33;">Versión para Escritorio</h2>
+        <p style="color: #3a5670; font-size: clamp(0.9rem, 1.2vw, 1.1rem); max-width: 500px; margin: 0 auto 1.2rem;">
+          Descarga el instalador para Windows y gestiona tu negocio desde tu PC.
+        </p>
+        <a
+          href="https://tecnobum.github.io/ipvminegocio/IPV%20Mi%20Negocio%20(Windows-1.0.0).zip"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-desktop"
+          style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 2.5rem; border-radius: 80px; font-weight: 600; text-decoration: none; font-size: clamp(0.9rem, 1.1vw, 1.05rem); min-height: 52px;"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Descargar para Windows
+        </a>
+        <div class="cta-note">
+          <p><strong>Requisitos mínimos:</strong> Windows 7 o superior · 2GB RAM · 200MB espacio disponible</p>
+          <p style="margin-top: 0.4rem; font-size: 0.85em;">📦 Archivo ZIP · Peso aproximado: 45 MB</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================== -->
+  <!-- ===== CARRUSEL DE MARCAS ===== -->
+  <!-- ========================================================== -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="brands-section animate-on-scroll">
         <div class="section-header">
           <h2>Confían en IPV · Mi Negocio</h2>
           <p>Negocios reales que ya están usando nuestra aplicación</p>
@@ -1817,7 +2093,9 @@
         <a href="#tutorials">Tutoriales</a>
         <a href="#about">Sobre la app</a>
         <a href="#plans">Planes</a>
+        <a href="#services">Servicios</a>
         <a href="#download">Descargar</a>
+        <a href="#download-desktop">Escritorio</a>
       </div>
       <p>© 2026 IPV - Mi Negocio. Todos los derechos reservados.</p>
       <p class="developer-credit">Desarrollado por VERSUS Technology</p>
